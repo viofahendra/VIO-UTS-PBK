@@ -84,6 +84,18 @@ onMounted(() => {
             </div>
           </li>
         </ul>
+
+        <div class="input-group">
+          <input
+            ref="inputField"
+            v-model="newTask"
+            type="text"
+            placeholder="Masukkan kegiatan baru"
+          />
+          <button v-if="isEditing" @click="updateTask">Update</button>
+          <button v-else @click="addTask">Tambah</button>
+          <button v-if="isEditing" class="cancel-btn" @click="cancelEdit">Batal</button>
+        </div>
       </div>
     </div>
   </div>
